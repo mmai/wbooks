@@ -11,3 +11,9 @@ server parameters :
 * meta package : front + api server
 * call server with parameters
   * port
+
+
+## Road to rust stable
+
+Crates requiring nightly :
+* gettext-macros

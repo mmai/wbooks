@@ -1,3 +1,5 @@
+default:
+	cargo +nightly build
 nix:
 	nix build
 vbox-destroy:
