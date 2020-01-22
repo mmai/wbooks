@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/main.rs:13
+#: src/main.rs:20
 msgid "Hello, {}!"
 msgstr "Hi, {}!"
 
