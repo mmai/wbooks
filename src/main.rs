@@ -14,11 +14,18 @@ async fn main() {
 
 
     let default = warp::fs::dir("public/");
-    let hello = warp::path!("hello" / String).map(move |name| {
-        let (_stcat, catalog_en) = &catalogs[0];
-        let (_stcat, catalog_fr) = &catalogs[1];
-        format!("{}", i18n!(catalog_fr, "Hello, {}!"; name))
+
+    let hello = 
+        warp::path!("hello" / String)
+        .and(warp::header("Accept-Language"))
+        .map(move |name: String, lang: String| {
+            let (_stcat, catalog) = match lang.as_str() {
+                "fr" => &catalogs[1],
+                _ => &catalogs[0],
+            };
+            format!("{}", i18n!(catalog, "Hello, {}!"; name))
     });
+
     let routes = warp::get()
         .and( warp::path("api")
               .and(hello)

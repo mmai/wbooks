@@ -12,6 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/main.rs:20
+#: src/main.rs:26
 msgid "Hello, {}!"
 msgstr ""
